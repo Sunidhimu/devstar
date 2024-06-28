@@ -1,13 +1,10 @@
 <script>
-	let flashcards = [];
 	let title = '';
 	let description = '';
 	let frontImage = '';
 	let frontContent = '';
 	let backImage = '';
 	let backContent = '';
-	let isEditing = false;
-	let editIndex = null;
 
 	function handleImageChange(event, isFront) {
 		const file = event.target.files[0];
@@ -23,77 +20,44 @@
 			reader.readAsDataURL(file);
 		}
 	}
-
-	function addOrUpdateFlashcard() {
-		const newFlashcard = {
-			title,
-			description,
-			frontImage,
-			frontContent,
-			backImage,
-			backContent
-		};
-
-		if (isEditing && editIndex !== null) {
-			flashcards[editIndex] = newFlashcard;
-			isEditing = false;
-			editIndex = null;
-		} else {
-			flashcards = [...flashcards, newFlashcard];
-		}
-
-		title = '';
-		description = '';
-		frontImage = '';
-		frontContent = '';
-		backImage = '';
-		backContent = '';
-	}
-
-	function editFlashcard(index) {
-		const flashcard = flashcards[index];
-		title = flashcard.title;
-		description = flashcard.description;
-		frontImage = flashcard.frontImage;
-		frontContent = flashcard.frontContent;
-		backImage = flashcard.backImage;
-		backContent = flashcard.backContent;
-		isEditing = true;
-		editIndex = index;
-	}
 </script>
 
+<div class="card gap-16 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 overflow-hidden rounded-lg"></div>
+
 <div class="max-w-md mx-auto p-4">
-	<h1 class="text-xl font-bold mb-4">{isEditing ? 'Edit Flashcard' : 'Add Flashcard'}</h1>
+	<h1 class="text-xl font-bold mb-4">Add Flashcard</h1>
 	<input type="text" class="block w-full p-2 mb-4 border-gray-300 rounded" placeholder="Title" bind:value={title} />
 	<textarea placeholder="Description" class="block w-full p-2 mb-4 border-gray-300 rounded" bind:value={description}></textarea>
 	<input type="file" accept="image/*" on:change={(event) => handleImageChange(event, true)} class="block w-full p-2 mb-4 border-gray-300 rounded" />
 	<input type="text" class="block w-full p-2 mb-4 border-gray-300 rounded" placeholder="Front Content" bind:value={frontContent} />
 	<textarea placeholder="Back Content" class="block w-full p-2 mb-4 border-gray-300 rounded" bind:value={backContent}></textarea>
 	<input type="file" accept="image/*" on:change={(event) => handleImageChange(event, false)} class="block w-full p-2 mb-4 border-gray-300 rounded" />
-	<button type="button" class="bg-gray-900 text-white px-4 py-2 rounded hover:bg-blue-600" on:click={addOrUpdateFlashcard}>{isEditing ? 'Update Flashcard' : 'Add Flashcard'}</button>
+	<button type="submit" class="bg-gray-900 text-white px-4 py-2 rounded hover:bg-blue-600">Save</button>
 </div>
 
-<div class="flashcard-container">
-	{#each flashcards as flashcard, index}
-		<div class="flashcard-wrapper">
-			<div class="flashcard">
-				<div class="front">
-					{#if flashcard.frontImage}
-						<img src={flashcard.frontImage} alt="Front Image" class="w-full h-auto rounded mb-2" />
-					{/if}
-					<h2>{flashcard.frontContent}</h2>
-				</div>
-				<div class="back">
-					{#if flashcard.backImage}
-						<img src={flashcard.backImage} alt="Back Image" class="w-full h-auto rounded mb-2" />
-					{/if}
-					<p>{flashcard.backContent}</p>
-				</div>
-			</div>
-			<button type="button" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-800" on:click={() => editFlashcard(index)}>Edit</button>
+<a href="D:\AURO\flashcards\devstar\src\routes\(tools)\online-flashcard\flashcards.svelte">
+	<div class="max-w-md mx-auto p-4">
+		<h1 class="text-xl font-bold mb-4">Flashcards</h1>
+		<div class="p-4 mb-4 border border-gray-400 rounded shadow">
+			<h3 class="font-bold mb-2">{title}</h3>
+			<p class="mb-2">{description}</p>
+			{#if frontImage}
+				<img src={frontImage} alt={title} class="w-full h-auto rounded" />
+			{/if}
 		</div>
-	{/each}
+	</div>
+</a>
+
+<div class="flashcard">
+	<div class="front">
+		<h2>{frontContent}</h2>
+	</div>
+	<div class="back">
+		{#if backImage}
+			<img src={backImage} alt="Back Image" class="w-full h-auto rounded mb-2" />
+		{/if}
+		<p>{backContent}</p>
+	</div>
 </div>
 
 <style>
@@ -103,20 +67,11 @@
 	}
 
 	/* Container styling */
-	.flashcard-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.flashcard-wrapper {
-		margin: 10px;
-	}
-
 	.flashcard {
 		perspective: 1000px;
 		width: 300px;
 		height: 200px;
+		margin: 20px auto;
 		position: relative;
 	}
 
