@@ -218,11 +218,7 @@
         ]
     },
     "online-flashcard": {
-<<<<<<< HEAD
-        "name": "Online Flash Card ",
-=======
-        "name": "",
->>>>>>> prem-verma
+        "name": "Online Flash Cards",
         "link": "/online-flashcard",
         "description": "",
         "contributors": [
