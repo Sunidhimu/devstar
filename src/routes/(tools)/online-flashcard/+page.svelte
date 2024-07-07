@@ -62,7 +62,7 @@
 
 <h1>Your Study Sets</h1>
 <div class="container" id="studySets">
-  <a href="/create" id="createBtn">Create New Study Set</a>
+  <a href="/CreatePage.svelte" id="createBtn">Create New Study Set</a>
   {#each studySets as set}
     <div class="set">
       <div class="setHeader">
