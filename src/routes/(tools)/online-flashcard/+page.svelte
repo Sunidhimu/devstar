@@ -128,6 +128,6 @@
             </li>
         {/each}
     </ul>
-<a href="/create" class="linkablebutton">Create Flashcard</a>
+<a href="/online-flashcard/create" class="linkablebutton">Create Flashcard</a>
 
 </div>
