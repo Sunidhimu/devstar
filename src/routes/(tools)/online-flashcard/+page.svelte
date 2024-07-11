@@ -23,7 +23,7 @@
         selectedFolder = folder;
     }
    function navigateToCreate() {
-        goto('/create');
+        goto('online-flashcard/create');
     }
 
 </script>
