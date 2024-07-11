@@ -1,5 +1,4 @@
 <script>
-    import { goto } from '$app/navigation';
     let folders = [];
     let folderName = '';
     let flashCardName = '';
@@ -22,9 +21,7 @@
     function selectFolder(folder) {
         selectedFolder = folder;
     }
-   function navigateToCreate() {
-        goto('online-flashcard/create');
-    }
+  
 
 </script>
 
@@ -61,6 +58,15 @@
         border: solid;
         border-radius: 20px;
     }
+   .linkbutton{
+        margin-left: 10px;
+        padding: 8px 12px;
+        font-size: 1rem;
+        cursor: pointer;
+        border: solid;
+        border-radius: 20px;
+    }
+
 
     .folder {
         cursor: pointer;
@@ -122,5 +128,6 @@
             </li>
         {/each}
     </ul>
-<button on:click={navigateToCreate}>Create Flashcard</button>
+<a href="/create" class="linkablebutton">Create Flashcard</a>
+
 </div>
