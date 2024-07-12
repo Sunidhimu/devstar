@@ -116,7 +116,7 @@
 	  <button type="submit" class="bg-gray-900 text-white px-4 py-2 rounded hover:bg-blue-600" on:click={saveFlashcard}>Save</button>
 	</div>
   {:else}
-	<div class="max-w-md mx-auto p-4">
+	<div class="style-container">
 	  <h1 class="text-xl font-bold mb-4">Flashcards</h1>
 	  {#if $flashcards.length > 0}
 		<div class="p-4 mb-4 border border-gray-400 rounded shadow">
@@ -157,11 +157,25 @@
 	  margin: 0;
 	  padding: 0;
 	}
+         .slide-container {
+		width: 1280px;
+		height: 720px;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		padding: 4rem;
+		box-sizing: border-box;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		background-color: #fff;
+	}
   
 	.flashcard {
 	  perspective: 1000px;
-	  width: 1000px;
-	  height: 1000px;
+	  width: 800px;
+	  height: 800px;
 	  margin: 20px auto;
 	  position: relative;
 	}
