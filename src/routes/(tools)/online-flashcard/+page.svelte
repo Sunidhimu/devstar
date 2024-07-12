@@ -160,8 +160,8 @@
   
 	.flashcard {
 	  perspective: 1000px;
-	  width: 600px;
-	  height: 600px;
+	  width: 900px;
+	  height: 1000px;
 	  margin: 20px auto;
 	  position: relative;
 	}
