@@ -103,7 +103,7 @@
   </script>
   
   {#if showForm}
-	<div class="max-w-md mx-auto p-4 cols-1">
+	<div class="max-w-md mx-auto p-4 ">
 	  <h1 class="text-xl font-bold mb-4">{isEditing ? 'Edit Flashcard' : isInitialCard ? 'Add Flashcard' : 'Add New Flashcard'}</h1>
 	  {#if isInitialCard}
 		<input type="text" class="block w-full p-2 mb-4 border-gray-300 rounded" placeholder="Title" bind:value={title} required />
@@ -160,8 +160,8 @@
   
 	.flashcard {
 	  perspective: 1000px;
-	  width: 300px;
-	  height: 200px;
+	  width: 600px;
+	  height: 600px;
 	  margin: 20px auto;
 	  position: relative;
 	}
