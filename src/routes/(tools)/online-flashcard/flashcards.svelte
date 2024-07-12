@@ -8,7 +8,7 @@
 	});
   </script>
   
-  <div class="max-w-md mx-auto p-4">
+  <div class="max-w-md mx-auto p-4 cols-1">
 	<h1 class="text-xl font-bold mb-4">Flashcards</h1>
 	{#each cards as card}
 	  <div class="p-4 mb-4 border border-gray-400 rounded shadow">
