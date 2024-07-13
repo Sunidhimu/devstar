@@ -125,12 +125,12 @@
 			<h3 class="font-bold mb-2">{card.title}</h3>
 			<p class="mb-2">{card.description}</p>
 		   </div>
-			{#if card.frontImage}
-			  <img src={card.frontImage} alt={card.title} class="w-full h-auto rounded mb-2" />
-			{/if}
 			<div class="flashcard">
 			  <div class="front">
-				<h2>{card.frontContent}</h2>
+                                   {#if card.frontImage}
+					<img src={card.frontImage} alt={card.title} class="w-full h-auto rounded mb-2" />
+				   {/if}
+                                  <h2>{card.frontContent}</h2>
 			  </div>
 			  <div class="back">
 				{#if card.backImage}
