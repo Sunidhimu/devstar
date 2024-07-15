@@ -218,7 +218,11 @@
         ]
     },
     "online-flashcard": {
+<<<<<<< HEAD
         "name": "OF",
+=======
+        "name": "Online flashcards ",
+>>>>>>> 0f1004269802a9bf7773a6cf3d0abc7e53d0e786
         "link": "/online-flashcard",
         "description": "",
         "contributors": [
