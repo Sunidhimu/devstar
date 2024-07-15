@@ -12,14 +12,14 @@
 	<h1 class="text-xl font-bold mb-4 bg-white p-2">Flashcards</h1>
 	{#each cards as card}
 	  <div class="p-4 mb-4 border border-gray-400 rounded shadow">
-		<h3 class="font-bold mb-2 bg-white p-2">{card.title}</h3>
-		<p class="mb-2 bg-white p-2" >{card.description}</p>
+		<h1 class="font-black mb-2 bg-white p-2 uppercase underline text-8xl ">{card.title}</h1>
+		<p class="mb-2 bg-white p-2 font-normal lowercase text-2xl " >{card.description}</p>
 		{#if card.frontImage}
 		  <img src={card.frontImage} alt={card.title} class="w-full h-auto rounded" />
 		{/if}
 		<div class="flashcard">
 		  <div class="front">
-			<h2>{card.frontContent}</h2>
+			<h1>{card.frontContent}</h1>
 		  </div>
 		  <div class="back">
 			{#if card.backImage}
@@ -60,7 +60,7 @@
 	  align-items: center;
 	  justify-content: center;
 	  font-family: Arial, sans-serif;
-	  font-size: 1.2em;
+	  font-size: 60px;
 	  transition: transform 0.6s;
 	  padding: 10px;
 	  box-sizing: border-box;
@@ -88,17 +88,26 @@
   
 	.flashcard .front img,
 	.flashcard .back img {
-	  max-height: 50%;
-	  object-fit: contain;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 1000px;
+	width:900px
+	object-fit: contain;
 	}
   
-	.flashcard .front h2,
+	.flashcard .front h1,
 	.flashcard .back p {
 	  margin: 10px 0;
 	  word-wrap: break-word;
 	  overflow: hidden;
 	  text-overflow: ellipsis;
+	  text font: 20px;
 	  max-height: 45%;
+	  text-decoration: solid;
+	  font-size: medium;
+	  
 	}
   </style>
   

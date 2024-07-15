@@ -122,7 +122,7 @@
 		<div class="p-4 mb-4 border border-gray-400 rounded shadow">
 		  {#each $flashcards.slice(currentIndex, currentIndex + 1) as card, index}
 		  <div class="bg-white p-2">
-			<h3 class="font-bold mb-2">{card.title}</h3>
+			<h3 class="font-bold mb-2 ">{card.title}</h3>
 			<p class="mb-2">{card.description}</p>
 		   </div>
 			<div class="flashcard">
@@ -217,8 +217,12 @@
   
 	.flashcard .front img,
 	.flashcard .back img {
-	  width: 200px;
-	  height: 200px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	  width: 1000px;
+	  max-height: 800px;
 	  object-fit: contain;
 	}
   
@@ -264,8 +268,10 @@
     margin-top: 1rem;
   }
 
-  .disabled {
+  .disabled{
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+
 </style>
